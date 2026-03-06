@@ -42,7 +42,6 @@ next-forge comes with batteries included:
 - **Web** — Marketing site built with Tailwind CSS and TWBlocks
 - **App** — Main application with authentication and database integration
 - **API** — RESTful API with health checks and monitoring
-- **Docs** — Documentation site powered by Mintlify
 - **Email** — Email templates with React Email
 - **Storybook** — Component development environment
 
@@ -89,7 +88,6 @@ npx next-forge@latest init
 2. Set up required service accounts (Clerk, Stripe, Resend, etc.)
 3. Run the development server
 
-For detailed setup instructions, read the [documentation](https://www.next-forge.com/docs).
 
 ## Structure
 
@@ -101,7 +99,6 @@ next-forge/
 │   ├── web/        # Marketing website (port 3001)
 │   ├── app/        # Main application (port 3000)
 │   ├── api/        # API server
-│   ├── docs/       # Documentation
 │   ├── email/      # Email templates
 │   └── storybook/  # Component library
 └── packages/       # Shared packages
@@ -112,16 +109,6 @@ next-forge/
 ```
 
 Each app is self-contained and independently deployable. Packages are shared across apps for consistency and maintainability.
-
-## Documentation
-
-Full documentation is available at [next-forge.com/docs](https://www.next-forge.com/docs), including:
-
-- Detailed setup guides
-- Package documentation
-- Migration guides for swapping providers
-- Deployment instructions
-- Examples and recipes
 
 ## Contributing
 
