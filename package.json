@@ -2,6 +2,7 @@
   "name": "next-forge",
   "version": "5.3.2",
   "scripts": {
+    "prepare": "husky",
     "build": "turbo build",
     "dev": "turbo dev",
     "check": "npx ultracite@latest check",
@@ -21,6 +22,8 @@
     "@repo/typescript-config": "workspace:*",
     "@turbo/gen": "^2.6.3",
     "@types/node": "^24.10.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.3.2",
     "turbo": "^2.6.3",
     "typescript": "^5.9.3",
     "ultracite": "6.3.9",
@@ -35,5 +38,10 @@
       "parse5": "^7.2.1"
     }
   },
-  "type": "module"
+  "type": "module",
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,json,jsonc,css}": [
+      "npx ultracite fix"
+    ]
+  }
 }
