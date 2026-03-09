@@ -1,22 +1,73 @@
 {
-  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
-  "extends": ["ultracite/core", "ultracite/react", "ultracite/next"],
-  "javascript": {
-    "globals": ["Liveblocks"]
-  },
-  "files": {
-    "includes": [
-      "**/*",
-      "!packages/design-system/components/ui",
-      "!packages/design-system/lib",
-      "!packages/design-system/hooks",
-      "!packages/collaboration/config.ts",
-      "!docs/components/ui",
-      "!docs/lib",
-      "!docs/hooks",
-      "!apps/docs/**/*.json",
-      "!apps/email/.react-email",
-      "!packages/cms/basehub-types.d.ts"
-    ]
-  }
+	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+	"linter": {
+		"rules": {
+			"recommended": true,
+			"suspicious": {
+				"noArrayIndexKey": "off",
+				"noConsole": "error",
+				"noRedeclare": "error"
+			}
+		},
+		"domains": {
+			"react": "recommended",
+			"next": "recommended",
+			"test": "recommended"
+		}
+	},
+	"formatter": {
+		"indentStyle": "tab",
+		"indentWidth": 2,
+		"lineWidth": 80
+	},
+	"css": {
+		"parser": {
+			"tailwindDirectives": true
+		}
+	},
+	"javascript": {
+		"formatter": {
+			"quoteStyle": "double",
+			"semicolons": "always",
+			"trailingCommas": "none"
+		},
+		"globals": ["Liveblocks"]
+	},
+	"overrides": [
+		{
+			"includes": ["packages/seo/json-ld.tsx"],
+			"linter": {
+				"rules": {
+					"security": {
+						"noDangerouslySetInnerHtml": "off"
+					}
+				}
+			}
+		},
+		{
+			"includes": ["packages/cms/index.ts"],
+			"linter": {
+				"rules": {
+					"correctness": {
+						"noUnusedImports": "off"
+					}
+				}
+			}
+		}
+	],
+	"files": {
+		"includes": [
+			"**/*",
+			"!packages/design-system/components/ui",
+			"!packages/design-system/lib",
+			"!packages/design-system/hooks",
+			"!packages/collaboration/config.ts",
+			"!docs/components/ui",
+			"!docs/lib",
+			"!docs/hooks",
+			"!apps/docs/**/*.json",
+			"!apps/email/.react-email",
+			"!packages/cms/basehub-types.d.ts"
+		]
+	}
 }
